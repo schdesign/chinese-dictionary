@@ -11,8 +11,8 @@
 bool Translator::chineseWordToObject(const QString &str, TranslationObject &tObj)
 {
     TranslationObject emptyObject;
+    emptyObject.hskNumber = 0;
     tObj = emptyObject;
-    tObj.hskNumber = 0;
 
     auto search = chineseWordToIndex.find(str);
     if (search != chineseWordToIndex.end()) {
@@ -65,7 +65,7 @@ void Translator::init(const QString &text)
         if (!translationObjects[i].russianWords.isEmpty()) {
             QString str = translationObjects[i].russianWords;
             str.replace(QString(","), QString(";"));
-            QStringList stringList = str.split(";", QString::SkipEmptyParts);
+            QStringList stringList = str.split(";", Qt::SkipEmptyParts);
             for (auto s : stringList) {
                 if (s.trimmed().isEmpty())
                     continue;
@@ -221,7 +221,7 @@ int Translator::stringToObject(const QString &str, TranslationObject &tObj)
 {
     QString tmpString = str;
     tmpString.replace(QString("\t"), QString(" "));
-    QStringList stringList = tmpString.split(" ", QString::SkipEmptyParts);
+    QStringList stringList = tmpString.split(" ", Qt::SkipEmptyParts);
 
     if (stringList.size() < 4)
         return 0;

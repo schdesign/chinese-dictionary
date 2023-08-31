@@ -61,8 +61,8 @@ void ChineseDictionary::chineseToRussian()
 void ChineseDictionary::monotonePinyin()
 {
     TranslationObject emptyObject;
+    emptyObject.hskNumber = 0;
     translationObject = emptyObject;
-    translationObject.hskNumber = 0;
 
     QString monotonePinyinWord = monotonePinyinWordLineEdit->text();
 
@@ -93,8 +93,8 @@ void ChineseDictionary::monotonePinyin()
 void ChineseDictionary::pinyin()
 {
     TranslationObject emptyObject;
+    emptyObject.hskNumber = 0;
     translationObject = emptyObject;
-    translationObject.hskNumber = 0;
 
     QString pinyinWord = pinyinWordLineEdit->text();
 
@@ -130,8 +130,8 @@ void ChineseDictionary::quit()
 void ChineseDictionary::russianToChinese()
 {
     TranslationObject emptyObject;
+    emptyObject.hskNumber = 0;
     translationObject = emptyObject;
-    translationObject.hskNumber = 0;
 
     QString russianWord = russianWordLineEdit->text();
 
